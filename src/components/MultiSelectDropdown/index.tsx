@@ -129,7 +129,7 @@ export const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({
               role="searchbox"
               aria-autocomplete="list"
               placeholder="Search..."
-              value={searchTerm}
+              value={isOpen?searchTerm : value.map((val) => val.label).join(", ")}
               onClick={() => setIsOpen(true)}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -146,7 +146,7 @@ export const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({
             </div>
           </div>
 
-          {value.length > 0 && (
+          { isOpen && (
             <div className="flex flex-wrap gap-1 p-2 border-b border-zinc-200 flex-1">
               <div className="flex justify-between w-full">
                 <div className="flex gap-1 flex-wrap">
