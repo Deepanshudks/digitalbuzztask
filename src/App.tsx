@@ -5,7 +5,6 @@ import { MultiDocumentUpload } from "./components/MultiDocumentUpload";
 import { MultiSelectDropdown } from "./components/MultiSelectDropdown";
 import { NotificationButton } from "./components/Notification";
 import { type OptionType, type DocumentType } from "./mocks";
-
 import { useState } from "react";
 
 function App() {
@@ -34,7 +33,7 @@ function App() {
         />
         <NotificationButton />
       </div>
-      <div className="grid gap-3  py-8 bg-zinc-50 sm:grid-cols-2 grid-cols-1">
+      <div className="grid gap-3  p-8 bg-zinc-50 sm:grid-cols-2 grid-cols-1">
         <ChartWidget />
         <MultiDocumentUpload value={docs} onChange={setDocs} />
       </div>

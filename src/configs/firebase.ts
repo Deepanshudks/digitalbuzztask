@@ -26,15 +26,13 @@ export const requestForToken = async () => {
       serviceWorkerRegistration: registration,
     });
     if (currentToken) {
-      console.log("FCM Token:", currentToken);
+      // console.log("Token:", currentToken);
       return currentToken;
     } else {
-      console.log(
-        "No registration token available. Request permission to generate one."
-      );
+      console.log("No registration token available.");
     }
   } catch (err: any) {
-    console.error("An error occurred while retrieving token. ", err);
+    // console.error("error while retrieving token. ", err);
     logEvent(analytics, "exception", {
       description: err.message,
       fatal: true,
